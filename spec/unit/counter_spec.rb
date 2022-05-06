@@ -15,4 +15,28 @@ describe Counter do
       expect(counter.count).to eq 1
     end
   end
+
+  describe '#decrement' do
+    it 'takes 1 away from the count' do
+      counter = Counter.new
+      counter.increment
+      expect(counter.count).to eq 1
+      counter.decrement
+      expect(counter.count).to eq 0
+    end
+  end
+
+  describe '#reset' do
+    it 'it resets the count back to 0' do
+      counter = Counter.new
+      counter.increment
+      expect(counter.count).to eq 1
+      counter.increment
+      expect(counter.count).to eq 2
+      counter.increment
+      expect(counter.count).to eq 3
+      counter.reset
+      expect(counter.count).to eq 0
+    end
+  end
 end

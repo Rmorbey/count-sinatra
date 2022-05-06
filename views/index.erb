@@ -5,10 +5,37 @@
     <meta charset="utf-8">
     <title>Count</title>
   </head>
+
+  <h1>Click me to Reset</h1>
+
+  <body>
+    <form action="/reset" method="post">
+      <input type="submit" value="Reset">
+    </form>
+  </body>
+
+  <h1>Click me to go up by 1</h1>
+
   <body>
     <form action="/increment" method="post">
       <input type="submit" value="Increment">
     </form>
-    <div id="count"><%= @counter.count %></div>
   </body>
-</html>
+
+  <h1>Click me to go down by 1</h1>
+
+  <body>
+    <form action="/decrement" method="post">
+      <input type="submit" value="Decrement">
+    </form>
+  </body>
+
+  <h1>Watch me go up and down</h1>
+
+  <div id="count"><%= @counter.count %></div>
+
+
+  <h2>Counter changed at <%= @time %></h2>
+
+ 
+</html> 

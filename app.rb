@@ -5,6 +5,7 @@ class CounterApp < Sinatra::Base
 
   before do
     @counter = Counter.instance
+    @time = Time.new.strftime("%k:%M:%S")
   end
 
   get '/' do
@@ -13,6 +14,16 @@ class CounterApp < Sinatra::Base
 
   post '/increment' do
     @counter.increment
+    redirect '/'
+  end
+
+  post '/decrement' do
+    @counter.decrement
+    redirect '/'
+  end
+
+  post '/reset' do
+    @counter.reset
     redirect '/'
   end
 end
